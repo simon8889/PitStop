@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+} 
+
+.pitStop {
+	display: flex;
+}
+
+.pitStop__sideBar {
+	flex-basis: 15%;
+}
