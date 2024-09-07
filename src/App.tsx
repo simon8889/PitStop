@@ -7,7 +7,7 @@ export default function App() {
 	return (
 		<main className={styles.pitStop}>
 			<section className={styles.pitStop__sideBar}>
-				<h1 className={styles.pitstop__title}>PitStop</h1>
+				<h1 className={styles.pitStop__title}>PitStop</h1>
 				<Nav />
 			</section>
 			<DriversContainer />

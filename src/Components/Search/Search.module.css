@@ -1,0 +1,24 @@
+.Search__input{
+	box-sizing: border-box;
+	width: 100%;
+	font-size: 2rem;
+	padding: 5px;
+	background-color: #00000073;
+	border: 1px solid #00000017;
+	color: #ffffff;
+    font-family: "Bebas Neue", sans-serif;
+	letter-spacing: .1rem;
+}
+
+.Search__input:focus {
+	outline: none;
+	background-color: #0000008f;
+	border: 1px solid #00000017;
+	transition: all ease .5s;
+}
+
+.Search__results {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}

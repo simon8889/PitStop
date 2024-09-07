@@ -16,6 +16,8 @@
   "dependencies": {
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "flag-icons": "^7.2.3",
+    "fuse.js": "^7.0.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "zustand": "^4.5.5"

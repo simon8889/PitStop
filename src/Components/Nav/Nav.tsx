@@ -1,27 +1,25 @@
 import { useEffect, useState } from 'react'
 import { useSession } from '../../Hooks/useSession'
 import { DropDown } from '../DropDown'
+import styles from './Nav.module.css'
+import { Search } from '../Search'
 
 export const Nav = () => {
-    
-    const [sessions, setSessions] = useState<Session[]>([])
     const [seasons, setSeasons] = useState<Season[]>()
+    const [sessions, setSessions] = useState<Session[]>([])
     const sessionManager = useSession()
 
     useEffect(() => {
         fetch(`https://api.openf1.org/v1/sessions?session_name=Race`)
             .then(res => res.json())
             .then((data: Session[]) => {
-                setSessions(data.reverse())
-                setSeasons(formatSeason(data))
+                const sessions = data.reverse()
+                setSeasons(formatSeason(sessions))
+                setSessions(sessions)
+                const lastSession = sessions[0]
+                sessionManager.updateSession(lastSession)
             })
     }, [])
-    
-    useEffect(() => {
-        const lastSession = sessions[0];
-        sessionManager.updateSession(lastSession)
-    }, [sessions])
-    
     
     const getEmptySeason = (year: number): Season => ({year: year, sessions: []})
     
@@ -39,15 +37,12 @@ export const Nav = () => {
         seasons.push(currentSeason)
         return seasons
     }
-
-    const handleSessionClick = (session: Session) => {
-        sessionManager.updateSession(session)
-    }
     
     return (
-        <nav>
-            <h2>Seasons</h2>
-            <div>
+        <nav className={styles.Nav}>
+            <h2 className={styles.Nav__title}>Seasons</h2>
+            <Search sessionList={sessions} />
+            <div className={styles.Nav__seasons}>
                 { seasons && seasons.map((season: Season) => (
                     <DropDown key={season.year} season={season}/>
                 ))}
