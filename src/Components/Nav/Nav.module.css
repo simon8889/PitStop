@@ -15,16 +15,3 @@
 	overflow-y: auto;
 }
 
-.Nav__seasons::-webkit-scrollbar {
-  width: 5px;
-  background-color: #00000013;
-}
-
-.Nav__seasons::-webkit-scrollbar-track {
-  border-radius: 3px;
-}
-
-.Nav__seasons::-webkit-scrollbar-thumb {
-  border-radius: 2px;
-  background-color: #0000008c;
-}

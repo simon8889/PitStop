@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react"
 import { DriverCard } from "../DriverCard"
 import { useSession } from "../../Hooks/useSession"
+import styles from "./DriverContainer.module.css"
 
 export const DriversContainer = () => {
 	const [ driversList, setDriversList ] = useState<Driver[]>([])
-	
 	const currentSession = useSession(state => state.session)
 	
 	useEffect(() => {
@@ -15,9 +15,11 @@ export const DriversContainer = () => {
 	}, [currentSession])
 	
 	return (
-		<section>
-			<h1>Viewing: {`${currentSession?.location} ${currentSession?.year}`}</h1>
-			{ driversList && driversList.map(data => (<DriverCard key={data.driver_number} driver={data}/>))}
+		<section className={styles.DriverContainer}>
+			<h1>Race: {`${currentSession?.location} ${currentSession?.year}`}</h1>
+			<ul>
+				{ driversList && driversList.map(data => (<DriverCard key={data.driver_number} driver={data}/>))}
+			</ul>
 		</section>
 	)
 }

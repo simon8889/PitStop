@@ -8,7 +8,8 @@
   width: 100vw;
   height: 100vh;
 	display: flex;
-  background-color: rgb(124, 124, 124);
+  background-size: cover;
+  background-image: radial-gradient( circle farthest-corner at 3.2% 49.6%,  rgba(80,12,139,0.87) 0%, rgba(161,10,144,0.72) 83.6% );
   color: white;
 }
 
@@ -25,3 +26,18 @@
   letter-spacing: 0.05em;
   color: #fff;
 }
+
+*::-webkit-scrollbar {
+  width: 5px;
+  background-color: #00000013;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #0000008c;
+}
+
