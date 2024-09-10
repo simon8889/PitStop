@@ -34,3 +34,21 @@ type Season = {
 	year: number;
 	sessions: Session[]
 }
+
+type RaceLog = {
+  session_key: number;
+  meeting_key: number;
+  date: string;
+  category: "Flag" | "Other" | "Drs" | string; // Categorías conocidas
+  flag: "BLUE" | "GREEN" | null; // Banderas conocidas
+  driver_number: number | null;
+  lap_number: number | null;
+  message: string;
+  scope: string | null;
+  sector: string | null;
+}
+
+type DriverColor = {
+  driver_number: number;
+  team_colour: string;
+}

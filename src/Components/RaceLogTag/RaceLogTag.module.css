@@ -1,0 +1,10 @@
+.DriverNumber {
+	font-family: "Bungee", sans-serif;
+	color: white;
+	font-size: 1rem;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 0.5rem;
+	display: grid;
+	place-items: center;
+}

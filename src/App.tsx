@@ -1,6 +1,7 @@
 import { DriversContainer } from "./Components/DriversContainer"
 import { Nav } from "./Components/Nav"
 import styles from "./App.module.css"
+import { RaceControl } from "./Components/RaceControl"
 
 export default function App() {
 
@@ -11,6 +12,7 @@ export default function App() {
 				<Nav />
 			</section>
 			<DriversContainer />
+			<RaceControl />
 		</main>
 	)
 }
